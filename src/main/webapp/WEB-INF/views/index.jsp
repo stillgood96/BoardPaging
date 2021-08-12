@@ -13,7 +13,6 @@ VIEW단에서는 원래 글번호를 링크해주어 상세보기를 해야해�
 <fmt:parseNumber var="pp" value="5"/>
 <fmt:parseNumber var="snum" value="${bdCnt - (cp-1) * pp}" integerOnly="true"/>
 
-
 <%--네비게이션 구할때 쓰는 값--%>
 <fmt:parseNumber var="pps" value="5"/>
 <fmt:parseNumber var="sp" integerOnly="true" value="${((cp - 1) / pps)}"/>
@@ -27,8 +26,6 @@ VIEW단에서는 원래 글번호를 링크해주어 상세보기를 해야해�
 
 <%--네비게이션 링크바 변수--%>
 <c:set var="navlnk" value="/board?cp="/>
-
-
 <html>
 <head>
     <title>BoardPaging</title>
