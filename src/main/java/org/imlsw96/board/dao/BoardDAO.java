@@ -8,4 +8,5 @@ import java.util.List;
 public interface BoardDAO {
     int countBoard();
     List<BoardVO> getContents(int snum);
+    BoardVO selectOneBoard(int bno);
 }

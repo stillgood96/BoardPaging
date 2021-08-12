@@ -7,5 +7,6 @@ import java.util.List;
 public interface BoardService {
     int countBoard();
     List<BoardVO> getBoardContents(int cp);
+    BoardVO selectOneBoard(int bno);
 
 }

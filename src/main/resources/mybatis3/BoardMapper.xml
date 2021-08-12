@@ -12,7 +12,11 @@
             resultType="org.imlsw96.board.vo.BoardVO">
         select bno,title,userid,regdate,thumbs,views from Board
         order by bno desc
-            limit #{snum}, 10;
+            limit #{snum}, 5;
+    </select>
+
+    <select id="selectOneBoard" statementType="PREPARED"  resultType="org.imlsw96.board.vo.BoardVO">
+        select * from Board where bno=#{bno};
     </select>
 
 </mapper>

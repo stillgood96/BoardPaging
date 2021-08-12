@@ -22,8 +22,16 @@ public class BardController {
         mv.addObject("bdCnt", bsrv.countBoard() );
         mv.addObject("bdInfo", bsrv.getBoardContents(realCP) );
 
+        return mv;
+    }
 
-
+    @GetMapping("/board/view")
+    public ModelAndView view(ModelAndView mv, @RequestParam String bno){
+        int intBno = Integer.parseInt(bno);
+        mv.setViewName("boardView");
+        mv.addObject("bno",bno);
+        mv.addObject("boardInfo", bsrv.selectOneBoard(intBno));
+        mv.addObject("bdCnt", bsrv.countBoard() );
         return mv;
     }
 }

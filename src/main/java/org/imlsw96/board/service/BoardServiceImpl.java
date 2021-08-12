@@ -22,7 +22,12 @@ public class BoardServiceImpl implements BoardService{
 
     @Override
     public List<BoardVO> getBoardContents(int cp) {
-        int snum = (cp-1) * 10;
+        int snum = (cp-1) * 5;
         return bdao.getContents(snum);
+    }
+
+    @Override
+    public BoardVO selectOneBoard(int bno) {
+        return bdao.selectOneBoard(bno);
     }
 }

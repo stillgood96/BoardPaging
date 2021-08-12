@@ -24,4 +24,9 @@ public class BoardDAOImpl implements BoardDAO{
     public List<BoardVO> getContents(int snum) {
         return sqlSession.selectList("board.selectContents", snum);
     }
+
+    @Override
+    public BoardVO selectOneBoard(int bno) {
+        return sqlSession.selectOne("board.selectOneBoard", bno);
+    }
 }
