@@ -42,11 +42,11 @@ VIEW단에서는 원래 글번호를 링크해주어 상세보기를 해야해�
             <form>
                 <span>로그인</span>
                 <table>
-                    <tr><td>아이디</td><td><input type="text" nam="userid" placeholder="아이디"></td></tr>
-                    <tr><td>비밀번호</td><td><input type="password" nam="password" placeholder="비밀번호"></td></tr>
+                    <tr><td>아이디</td><td><input class="userid" type="text" name="userid" placeholder="아이디"></td></tr>
+                    <tr><td>비밀번호</td><td><input class="password" type="password" name="password" placeholder="비밀번호"></td></tr>
                 </table>
             </form>
-            <span><button>로그인</button><button class="signUp">회원가입</button></span>
+            <span><button class="loginBtn">로그인</button><button class="signUp">회원가입</button></span>
         </div>
 
         <table class="boardTable">

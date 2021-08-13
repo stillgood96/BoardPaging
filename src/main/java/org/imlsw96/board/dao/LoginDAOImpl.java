@@ -20,4 +20,9 @@ public class LoginDAOImpl implements LoginDAO {
     public int checkUser(String userId) {
         return sqlSession.selectOne("user.checkUser", userId);
     }
+
+    @Override
+    public int tryLogin(UserVO uvo) {
+        return sqlSession.selectOne("user.tryLogin", uvo);
+    }
 }

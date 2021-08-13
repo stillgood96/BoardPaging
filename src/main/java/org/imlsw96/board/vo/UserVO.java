@@ -9,6 +9,11 @@ public class UserVO {
     public UserVO() {
     }
 
+    public UserVO(String userid, String password) {
+        this.userid = userid;
+        this.password = password;
+    }
+
     public UserVO(int uno, String userid, String password, String repassword) {
         this.uno = uno;
         this.userid = userid;

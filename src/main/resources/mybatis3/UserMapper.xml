@@ -12,4 +12,8 @@
     <select id="checkUser" statementType="PREPARED" parameterType="String" resultType="int">
         select count(userid) cnt from user where userid = #{userid}
     </select>
+
+    <select id="tryLogin" statementType="PREPARED" parameterType="String" resultType="int">
+        select count(userid) cnt from user where userid = #{userid} and password= #{password}
+    </select>
 </mapper>

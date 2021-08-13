@@ -10,11 +10,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class LoginController {
 
     @Autowired
-    LoginService isrv;
+    LoginService lsrv;
 
     @GetMapping("/signup")
     public String signUp() {
@@ -24,17 +26,26 @@ public class LoginController {
 
     @PostMapping("/signup/sign")
     public String login(UserVO uvo) {
-        isrv.insertUser(uvo);
+        lsrv.insertUser(uvo);
 
         return "redirect:/board?cp=1";
     }
 
     @ResponseBody
-    @GetMapping("/checklogin")
+    @GetMapping("/checkuser")
     public String checkUser(@RequestParam String userid) {
-       String result = Integer.toString(isrv.checkUser(userid));
+       String result = Integer.toString(lsrv.checkUser(userid));
 
         return result;
+    }
+
+    @ResponseBody
+    @GetMapping("/login")
+    public String login(UserVO uvo, HttpSession sess) {
+
+        lsrv.tryLogin(uvo, sess);
+
+        return "redirect:/board?cp=1";
     }
 
 }
